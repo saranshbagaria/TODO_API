@@ -17,13 +17,13 @@ A
 
 #### Get all todos
 
-```
+```java
   GET /api/todos
 ```
 
 #### Post new todo
 
-```
+```java
   GET /api/add-todo
 ```
 
@@ -31,7 +31,7 @@ A
 
 #### Put new todo
 
-```
+```java
   PUT /api/edit-todo/{id}
 ```
 
