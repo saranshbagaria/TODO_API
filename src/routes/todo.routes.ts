@@ -55,6 +55,24 @@ const todo_router = Router();
  *                  description : Description for ToDo title         
  */
 
+
+/** 
+ * @swagger
+ *  components:
+ *      schemas:
+ *          todo_put:
+ *              type: object
+ *              required:
+ *                - done
+ *              properties:
+ *                  done:
+ *                      type: boolean
+ *                      description : provide true if done 
+ *              example : 
+ *                  done : true
+ */                  
+
+
 /**
  * @swagger
  * /api/todos:
@@ -66,9 +84,10 @@ const todo_router = Router();
  *              content:
  *              application/json:
  *                  schema:
- *                      type: array 
- *                      items:
- *                          $ref : '#/components/schemas/ToDo'
+ *                      done:
+ *                          type: array 
+ *                          items:
+ *                              $ref : '#/components/schemas/ToDo'
  */
 
 todo_router.get("/todos", todoController.getTodo);
@@ -109,18 +128,15 @@ todo_router.post("/add-todo", todoController.addTodo);
  *          required : true
  *          schema :
  *             type : string
- *          description : The Todo Id
+ *           
+ *          description : Id of todo that you want to delete
+ *      
  *      requestBody: 
  *          required : true
- *          content:
+ *          content: 
  *              application/json:
- *              schema:
- *                  type : object
- *                  properties:
- *                      done:
- *                          type: boolean
- *                          description: send done true if you finished your work
- *                          example: true
+ *                  schema:
+ *                      $ref: '#/components/schemas/todo_put'
  *      responses : 
  *          200: 
  *              description : todos list
