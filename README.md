@@ -17,13 +17,13 @@ A
 
 #### Get all todos
 
-```http
+```
   GET /api/todos
 ```
 
 #### Post new todo
 
-```http
+```
   GET /api/add-todo
 ```
 
@@ -31,7 +31,7 @@ A
 
 #### Put new todo
 
-```http
+```
   PUT /api/edit-todo/{id}
 ```
 
@@ -41,13 +41,13 @@ A
 
 - **Required**.body of todo to be send
 
-```html
-{ "done" : true }
+```json
+{ "done": true }
 ```
 
 #### Delete new todo
 
-```http
+```java
   DELETE /api/delete-todo/{id}
 ```
 
@@ -60,7 +60,7 @@ A
 - Change MongoDb cluster url in config file
 - Install Application Dependecy with npm
 
-```html
+```bash
 npm update
 ```
 
@@ -78,7 +78,7 @@ To deploy this project run
 
 To access the swagger documentation run following command
 
-```http
+```
   GET /api-docs
 ```
 
